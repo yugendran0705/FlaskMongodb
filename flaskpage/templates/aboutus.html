@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        background-color: #333;
+        color: #fff;
+    }
+    h2 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        text-decoration: underline;
+        background-color: #444;
+        color: #ddd;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.5)));
+    }
+    .slider {
+        position: relative;
+        margin: 0 auto;
+        width: 50%;
+    }
+    .slide {
+        display: none;
+    }
+    .slide img {
+        width: 100%;
+        border: 3px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .active-slide {
+        display: block;
+    }
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size:18px; 
+      }
+      .next {
+         right:
+      }
+      .prev:hover,
+      .next:hover {
+         background-color:
+      }
+      .about-us {
+         text-align:center; 
+         font-size:
+      }
+      .contact-details {
+         text-align:center; 
+         background-color:#444; 
+         padding-top:
+         padding-right:0cqmax
+         padding-bottom:
+         padding-left:0cqmax
+      }
+</style>
+</head>
+<body>
+
+   
+    <style>
+        body {
+          background-color: #333;
+        }
+        .about-us {
+          background-color: #444;
+          border-radius: 25px;
+          box-shadow: 5px 5px 5px grey;
+          color: #fff;
+          filter: grayscale(100%);
+          margin: 0 auto;
+          padding-bottom: 20px;
+          text-align: center;
+          width: 50%;
+        }
+        .about-us h2 {
+          font-family: Arial, sans-serif;
+          font-size: 40px;
+          margin-bottom: 10px;
+          text-shadow: 1px 1px grey;
+        }
+        .about-us p {
+          font-family: Arial, sans-serif;
+          font-size: 20px;
+          margin-bottom: 10px;
+          text-shadow: 1px 1px grey;
+        }
+      </style>
+      
+      <h2>About Us</h2>
+      <div class="about-us">
+        <p>Digitrans is an IT services and consulting company that specializes in digital transformation services, helping clients, businesses, and institutions stay competitive in the digital age.</p>
+        <p>Our services range from digital marketing, web development, app development, social media management, graphic design, data analytics, content writing, demo videos, video editing, and 3D printing.</p>
+        <p>We are committed to providing our clients with the best solutions to help them stay ahead of the competition and make the most out of the digital era. Our team of experts is dedicated to helping clients achieve their goals and maximize their potential in the digital world.</p>
+      </div>
+   
+    
+    <div class="slider">
+        <div class="slide active-slide">
+          <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80" alt="Futuristic Tech Image 1">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHRlYW0lMjBidWlsZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Futuristic Tech Image 2">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1511352015382-902404d75843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZ1dHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Futuristic Tech Image 3">
+        </div>
+      
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+    
+    
+    
+    
+    <h2>Contact Details</h2>
+    
+    <div class="contact-details">
+        <p>Phone:<br>+91 99520 37361</p>
+        <p>Email:<br>digitransservices@gmail.com</p>
+       
+    </div>
+    
+    <script>
+    let slideIndex = 1;
+    
+    function changeSlide(n) {
+        showSlide(slideIndex += n);
+    }
+    
+    function showSlide(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+      
+        if (n > slides.length) {slideIndex = 1}
+      
+        if (n < 1) {slideIndex = slides.length}
+      
+        for (i = 0; i < slides.length; i++) {
+          slides[i].classList.remove("active-slide");
+          slides[i].style.display = "none";
+       }
+      
+       slides[slideIndex-1].classList.add("active-slide");
+       slides[slideIndex-1].style.display = "block";
+    }
+    </script>

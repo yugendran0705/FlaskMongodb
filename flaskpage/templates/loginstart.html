@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{%block content%}
+<section>
+    <div class="button-login">
+        <a href="{{url_for('client.client_login')}}" class="btn btn-primary btn1">Client</a>
+        <a href="{{url_for('developer.developer_login')}}" class="btn btn-primary btn1">Developer</a>
+    </div>
+</section>
+{% endblock %}

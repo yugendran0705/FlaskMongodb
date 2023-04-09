@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitrans Services</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c32b5f052d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+    <section id="title">
+        <div>
+        <div id="navbar">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="">Digitrans</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    {% if session.name %}
+                        {% if session.type == 'client' %}
+                        <li class="navbar-item">
+                        <a class="nav-link" href="{{url_for('client.client_accountdetails')}}">Account</a>
+                        </li>
+                        {% else %}
+                        <li class="navbar-item">
+                        <a class="nav-link" href="{{url_for('developer.developer_accountdetails')}}">Account</a>
+                        </li>
+                        {% endif %}
+                        <li class="navbar-item">
+                            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="navbar-item">
+                            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="nav-link" href="{{url_for('developer.developer_signup')}}">Developers</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="nav-link" href="{{url_for('client.client_signup')}}">Clients</a>
+                        </li>
+                    {% endif %}
+                    <li class="navbar-item">
+                        <a class="nav-link" href="">Blogs</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="{{url_for('aboutus')}}">About Us</a>
+                    </li>
+                </ul>  
+                </div>
+            </nav>
+        </div>
+        </div>
+    </section>
+
+        {% block content %}
+        {% endblock %}
+
+    <footer id="footer">
+        <a href="https://instagram.com/digitrans_services?igshid=YmMyMTA2M2Y="><i class="footer-icon fa-brands fa-instagram" ></i></a>
+        <a href="https://www.linkedin.com/company/digitrans-services/"><i class="footer-icon fa-brands fa-linkedin"></i></a>
+        <a href="Digitransservices@gmail.com"><i class="footer-icon fa-solid fa-envelope"></i></a>
+        <p>Copyright © 2023 Digitrans Services | Powered by Digitrans Services</p>
+    </footer>
+</body>
+</html>
